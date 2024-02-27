@@ -18,18 +18,21 @@ const CurrencyConverter = () => {
   return (
     <View style={styles.container}>
         <StatusBar style="light"/>
+        <Text style={{fontSize: 25, fontWeight: 500, color: 'white',}}>Currency Converter{'\n'}</Text>
       <Text style={styles.label}>Enter amount in dollars:</Text>
       <TextInput
         style={styles.input}
         value={dollars}
         onChangeText={(text) => setDollars(text)}
         keyboardType="numeric"
+        onFocus={{color: 'white',}}
+        cursorColor={'white'}
         
       />
       <Pressable onPress={convertCurrency} style={{borderRadius: 10, backgroundColor: 'lightgray', paddingHorizontal: 20, paddingVertical: 10,}}>
         <Text style={{fontWeight: 'bold',}}>Convert</Text>
       </Pressable>
-      <Text style={styles.result}>Amount in Rwandan Francs: {'\n'} <Text style={{color: 'black',}}> {francs}</Text></Text>
+      <Text style={styles.result}>Amount in Rwandan Francs: {'\n'} <Text style={{color: 'white',}}> {francs}</Text></Text>
     </View>
   );
 };
@@ -45,12 +48,12 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 18,
     marginBottom: 10,
-    color: 'white',
+    color: 'lightgray',
   },
   input: {
     width: '85%',
     height: 40,
-    borderColor: 'white',
+    borderColor: 'lightgray',
     borderRadius: 10,
     borderWidth: 1,
     marginBottom: 20,
@@ -62,7 +65,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 20,
     textAlign: 'center',
-    color: 'white',
+    color: 'lightgray',
   },
 });
 
